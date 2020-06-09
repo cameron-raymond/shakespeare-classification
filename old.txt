@@ -1,0 +1,5 @@
+true_positives = np.diag(cm)
+# false positives are the sum of the row, minus the diagonal which are true positives 
+false_positives = np.sum(cm, axis=1) - true_positives
+# false negatives are the sum along the column, minus the diagonal
+false_negatives = np.sum(cm, axis=0) - true_positives
